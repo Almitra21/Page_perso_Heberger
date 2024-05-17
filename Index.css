@@ -72,3 +72,10 @@ footer {
         margin: 5px; /* Réduire la marge entre les liens */
     }
 }
+img.responsive {
+    width: 100%;
+    height: auto; /* Conserve les proportions de l'image */
+    max-width: 600px; /* Limite la largeur maximale */
+    display: block;
+    margin: 20px auto;
+}
