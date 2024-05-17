@@ -44,16 +44,35 @@
             margin: 20px auto;
             width: 150px;
         }
-
-        /* Media Queries pour les petits écrans */
-        @media (max-width: 767px) {
-            nav {
-                display: block;
-            }
-            nav a {
-                padding: 10px; /* Réduire l'espace entre les liens */
-                margin: 5px; /* Réduire la marge entre les liens */
-            }
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #1a252f;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .btn {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #34495e;
         }
     </style>
 </head>
@@ -81,8 +100,20 @@
         <img src="photo3.jpg" alt="Description de la photo 3">
     </div>
 
+    <button class="btn" onclick="ajouterPhoto()">Ajouter une photo</button>
+
     <footer>
         <p>&copy; 2024 Burchard Anthony. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        function ajouterPhoto() {
+            var divPhotos = document.getElementById("photos");
+            var nouvellePhoto = document.createElement("img");
+            nouvellePhoto.src = "nouvelle_photo.jpg"; // Remplacez "nouvelle_photo.jpg" par le chemin de votre nouvelle photo
+            nouvellePhoto.alt = "Description de la nouvelle photo";
+            divPhotos.appendChild(nouvellePhoto);
+        }
+    </script>
 </body>
 </html>
