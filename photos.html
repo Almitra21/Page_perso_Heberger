@@ -19,16 +19,16 @@
             text-align: center;
         }
         nav {
-            display: flex;
-            justify-content: center;
             background-color: #1a252f;
+            text-align: center;
         }
         nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 14px 10px; /* Réduire l'espace */
             text-decoration: none;
             text-transform: uppercase;
-            margin: 0 10px;
+            margin: 0 5px; /* Réduire la marge */
+            display: block; /* Afficher les liens verticalement */
         }
         nav a:hover {
             background-color: #34495e;
@@ -44,12 +44,22 @@
             margin: 20px auto;
             width: 150px;
         }
+
+        /* Media Queries pour les petits écrans */
+        @media (max-width: 767px) {
+            nav {
+                display: block;
+            }
+            nav a {
+                padding: 10px; /* Réduire l'espace entre les liens */
+                margin: 5px; /* Réduire la marge entre les liens */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Bienvenue sur ma page personnelle</h1>
-        
         <div class="container">
             <img src="Dragon_1.png" alt="Logo" class="logo">
         </div>
@@ -62,7 +72,6 @@
         <a href="contact.html">Contact</a>
         <a href="work-time.html">Temps de travail</a>
     </nav>
-    
     <footer>
         <p>&copy; 2024 Burchard Anthony. Tous droits réservés.</p>
     </footer>
