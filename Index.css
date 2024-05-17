@@ -38,6 +38,13 @@ nav a:hover {
 h1 {
     color: white;
 }
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 .logo {
     display: block;
     margin: 20px auto;
