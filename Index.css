@@ -64,6 +64,9 @@ nav a {
     justify-content: center; /* Centre les divs dans le conteneur */
     flex-wrap: wrap; /* Pour que les divs passent à la ligne si nécessaire */
 }
+#dataContainer {
+    margin-top: 20px;
+}
 h1 {
     color: white;/* A SUPPRIMER LORSQUE TOUTE LES PAGES SERONT MODIFIEES TITRE H1 REMPLACER PAR DIV*/
 }
