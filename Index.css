@@ -64,9 +64,32 @@ nav a {
     justify-content: center; /* Centre les divs dans le conteneur */
     flex-wrap: wrap; /* Pour que les divs passent à la ligne si nécessaire */
 }
-#dataContainer {
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .form-group label {
+    width: 100px;
+    margin-right: 10px;
+  }
+  .form-group input {
+    flex: 1;
+  }
+  #dataContainer {
     margin-top: 20px;
-}
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
 h1 {
     color: white;/* A SUPPRIMER LORSQUE TOUTE LES PAGES SERONT MODIFIEES TITRE H1 REMPLACER PAR DIV*/
 }
@@ -79,7 +102,6 @@ p {
 }
 label{
     margin-left: 10%;
-
 }
 .card {
     background: white;
@@ -112,10 +134,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-#dataContainer {
-    white-space: pre-wrap; /* Pour un affichage lisible du JSON */
-    background: #f4f4f4;
-    padding: 10px;
-    border: 1px solid #ddd;
-    color: black;
-  }
