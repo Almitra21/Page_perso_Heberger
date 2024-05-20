@@ -85,10 +85,12 @@ nav a {
   }
   table, th, td {
     border: 1px solid black;
+    color: black;
   }
   th, td {
     padding: 10px;
     text-align: left;
+    color: black;
   }
 h1 {
     color: white;/* A SUPPRIMER LORSQUE TOUTE LES PAGES SERONT MODIFIEES TITRE H1 REMPLACER PAR DIV*/
