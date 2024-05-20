@@ -109,3 +109,9 @@ footer {
     width: 100%;
     bottom: 0;
 }
+#dataContainer {
+    white-space: pre-wrap; /* Pour un affichage lisible du JSON */
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
