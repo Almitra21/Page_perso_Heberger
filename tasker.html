@@ -44,6 +44,7 @@
           fetch('https://anthonyburchard.netlify.app/.netlify/functions/recevoir_donnees')
             .then(response => response.json())
             .then(data => {
+              console.log('Fetched Data:', data);
               const tableBody = document.querySelector('#dataTable tbody');
               tableBody.innerHTML = ''; // Clear the table
               data.storedData.forEach(item => {
