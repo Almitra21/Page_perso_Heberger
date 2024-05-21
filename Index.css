@@ -95,6 +95,10 @@ nav a {
     text-align: left;
     color: black;
   }
+  tbody {
+    display: table-row-group;
+    visibility: visible; /* Ajouté pour s'assurer que le tbody est visible */
+  }
 h1 {
     color: white;/* A SUPPRIMER LORSQUE TOUTE LES PAGES SERONT MODIFIEES TITRE H1 REMPLACER PAR DIV*/
 }
