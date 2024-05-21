@@ -24,11 +24,11 @@
     <div id="dataContainer">
     <form id="dataForm">
       <div class="form-group">
-        <label for="nom">Nom :</label>  
+        <label for="nom">Matin :</label>  
         <input type="text" id="nom" name="nom">
       </div>
       <div class="form-group">
-        <label for="age">Âge :</label>
+        <label for="age">Après-midi :</label>
         <input type="text" id="age" name="age">
       </div>
     </form>
@@ -40,8 +40,8 @@
         .then(data => {
           if (data.storedData.length > 0) {
             const latestData = data.storedData[data.storedData.length - 1];
-            document.getElementById('nom').value = latestData.nom;
-            document.getElementById('age').value = latestData.age;
+            document.getElementById('Matin').value = latestData.nom;
+            document.getElementById('Après-midi').value = latestData.age;
           } else {
             alert("Aucune donnée disponible.");
           }
