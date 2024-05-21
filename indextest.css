@@ -1,0 +1,23 @@
+#dataContainer {
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  table, th, td {
+    border: 1px solid black;
+      padding: 10px;
+      text-align: left;
+      width: calc(300% / 6);
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    color: black;
+  }
+  tbody {
+    display: table-row-group;
+    visibility: visible; /* Ajouté pour s'assurer que le tbody est visible */
+  }

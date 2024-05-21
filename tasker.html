@@ -19,59 +19,20 @@
         <a href="contact.html">Contact</a>
         <a href="work-time.html">Temps de travail</a>
         <a href="tasker.html">Tasker</a>
-    </nav>   
-
-    <div class="title">Temps de travail</div>
+    </nav>
+  <h1>Données reçues</h1>
     <div id="dataContainer">
-      <table id="dataTable">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Jours</th>
-            <th>Début</th>
-            <th>Fin</th>
-            <th>Durées</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Les données seront insérées ici -->
-        </tbody>
-      </table>
+    <form id="dataForm">
+      <div class="form-group">
+        <label for="nom">Nom :</label>  
+        <input type="text" id="nom" name="nom">
+      </div>
+      <div class="form-group">
+        <label for="age">Âge :</label>
+        <input type="text" id="age" name="age">
+      </div>
+    </form>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          fetch('https://anthonyburchard.netlify.app/.netlify/functions/recevoir_donnees')
-            .then(response => response.json())
-            .then(data => {
-              console.log('Fetched Data:', data);
-              const tableBody = document.querySelector('#dataTable tbody');
-              tableBody.innerHTML = ''; // Clear the table
-              data.storedData.forEach(item => {
-                const row = document.createElement('tr');
-                const idCell = document.createElement('td');
-                idCell.textContent = item.id;
-                const dateCell = document.createElement('td');
-                dateCell.textContent = item.date;
-                const joursCell = document.createElement('td');
-                joursCell.textContent = item.jours;
-                const debutCell = document.createElement('td');
-                debutCell.textContent = item.debut;
-                const finCell = document.createElement('td');
-                finCell.textContent = item.fin;
-                const dureesCell = document.createElement('td');
-                dureesCell.textContent = item.durees;
-                row.appendChild(idCell);
-                row.appendChild(dateCell);
-                row.appendChild(joursCell);
-                row.appendChild(debutCell);
-                row.appendChild(finCell);
-                row.appendChild(dureesCell);
-                tableBody.appendChild(row);
-              });
-            })
-            .catch(error => console.error('Erreur:', error));
-        });
-      </script>
+    <script src="netlify/functions/recevoir_donnees.js"></script>
 </body>
 </html>
