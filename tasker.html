@@ -40,8 +40,8 @@
         .then(data => {
           if (data.storedData.length > 0) {
             const latestData = data.storedData[data.storedData.length - 1];
-            document.getElementById('Matin').value = latestData.nom;
-            document.getElementById('Après-midi').value = latestData.age;
+            document.getElementById('matin').value = latestData.matin;
+            document.getElementById('après-midi').value = latestData.après-midi;
           } else {
             alert("Aucune donnée disponible.");
           }
