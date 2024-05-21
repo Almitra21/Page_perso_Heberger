@@ -28,8 +28,8 @@
         <input type="time" id="matin" name="matin">
       </div>
       <div class="form-group">
-        <label for="après-midi">Après-midi :</label>
-        <input type="time" id="après-midi" name="après-midi">
+        <label for="aprèsMidi">Après-midi :</label>
+        <input type="time" id="aprèsMidi" name="aprèsMidi">
       </div>
     </form>
     </div>
@@ -41,7 +41,7 @@
           if (data.storedData.length > 0) {
             const latestData = data.storedData[data.storedData.length - 1];
             document.getElementById('matin').value = latestData.matin;
-            document.getElementById('après-midi').value = latestData.après-midi;
+            document.getElementById('aprèsMidi').value = latestData.aprèsMidi;
           } else {
             alert("Aucune donnée disponible.");
           }
