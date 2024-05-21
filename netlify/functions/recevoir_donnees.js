@@ -1,22 +1,14 @@
-let storedData = [];
-
-exports.handler = async (event, context) => {
-  if (event.httpMethod === "POST") {
-    const data = JSON.parse(event.body);
-    storedData.push(data);
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: "Données reçues", data, storedData }),
-    };
-  } else if (event.httpMethod === "GET") {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ storedData }),
-    };
-  } else {
-    return {
-      statusCode: 405,
-      body: "Method Not Allowed",
-    };
-  }
-};
+document.getElementById('loadData').addEventListener('click', () => {
+      fetch('https://anthonyburchard.netlify.app/.netlify/functions/recevoir_donnees')
+        .then(response => response.json())
+        .then(data => {
+          if (data.storedData.length > 0) {
+            const latestData = data.storedData[data.storedData.length - 1];
+            document.getElementById('nom').value = latestData.nom;
+            document.getElementById('age').value = latestData.age;
+          } else {
+            alert("Aucune donnée disponible.");
+          }
+        })
+        .catch(error => console.error('Erreur:', error));
+});
