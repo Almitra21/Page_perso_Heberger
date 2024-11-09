@@ -1,55 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Formulaire de Test</title>
-    <link rel="stylesheet" href="Index.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <header>
-        <div class="bandeau">
-            <img src="Images/Dragon_1.png" alt="Logo" class="logo">
-        </div>
+      <div class="bandeau">
+        <img src="Images/Dragon_1.png" alt="Logo" class="logo" />
+      </div>
     </header>
     <main>
-    <nav>
+      <nav>
         <a href="index.html">Accueil</a>
         <a href="about.html">À propos</a>
-        <a href="Intérêts.html">Intérêts</a>
+        <a href="interets.html">Intérêts</a>
         <a href="photos.html">Photos</a>
         <a href="contact.html">Contact</a>
-        <a href="work-time.html">Temps de travail</a>
+        <a href="workTime.html">Temps de travail</a>
         <a href="tasker.html">Tasker</a>
-    </nav>
-  <div class="title">Données reçues</div>
-    <div id="dataContainer">
-    <form id="dataForm">
-      <div class="form-group">
-        <label for="matin">Matin :</label>  
-        <input type="time" id="matin" name="matin">
+      </nav>
+      <div class="title">Données reçues</div>
+      <div id="dataContainer">
+        <form id="dataForm">
+          <div class="form-group">
+            <label for="matin">Matin :</label>
+            <input type="time" id="matin" name="matin" />
+          </div>
+          <div class="form-group">
+            <label for="aprèsMidi">Après-midi :</label>
+            <input type="time" id="aprèsMidi" name="aprèsMidi" />
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="aprèsMidi">Après-midi :</label>
-        <input type="time" id="aprèsMidi" name="aprèsMidi">
-      </div>
-    </form>
-    </div>
-  </main>
-<script>
-      document.addEventListener('DOMContentLoaded', () => {
-      fetch('https://anthonyburchard.netlify.app/.netlify/functions/recevoir_donnees')
-        .then(response => response.json())
-        .then(data => {
-          if (data.storedData.length > 0) {
-            const latestData = data.storedData[data.storedData.length - 1];
-            document.getElementById('matin').value = latestData.matin;
-            document.getElementById('aprèsMidi').value = latestData.aprèsMidi;
-          } else {
-            alert("Aucune donnée disponible.");
-          }
-        })
-        .catch(error => console.error('Erreur:', error));
-    });
-</script>
-</body>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch(
+          "https://anthonyburchard.netlify.app/.netlify/functions/recevoir_donnees"
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.storedData.length > 0) {
+              const latestData = data.storedData[data.storedData.length - 1];
+              document.getElementById("matin").value = latestData.matin;
+              document.getElementById("aprèsMidi").value = latestData.aprèsMidi;
+            } else {
+              alert("Aucune donnée disponible.");
+            }
+          })
+          .catch((error) => console.error("Erreur:", error));
+      });
+    </script>
+  </body>
 </html>
